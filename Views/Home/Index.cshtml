@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CountrySorter.CountryData>
+
+@{
+    ViewData["Title"] = "Unsorted Data";
+}
+
+<h1>Unsorted Country Data - Raw JSON form</h1>
+<pre>
+    @Html.Raw("From API Endpoint: https://restcountries.eu/rest/v2/all")
+</pre>
+
+<h1>Unsorted Country Data - Tabular form</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.capital)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subregion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.currencies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.languages)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.capital)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.subregion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.currencies)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.languages)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
